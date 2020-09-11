@@ -35,6 +35,21 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
+
+			// Create the initial slide
+			Reveal.on('ready', function() {
+				var $initialTitle = document.createTextNode(document.title);
+				var $initialHeading = document.createElement('h1');
+				$initialHeading.appendChild($initialTitle);
+				var $initialSlide = document.createElement('section');
+				$initialSlide.appendChild($initialHeading);
+
+				var $slides = Reveal.getSlidesElement();
+				$slides.prepend($initialSlide);
+
+				Reveal.sync();
+				Reveal.slide(0, 0, 0);
+			});
 		</script>
 	</body>
 </html>
