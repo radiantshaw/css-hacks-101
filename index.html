@@ -37,7 +37,7 @@
 			});
 
 			// Create the initial slide
-			Reveal.on('ready', function() {
+			function createInitialSlide() {
 				var $initialTitle = document.createTextNode(document.title);
 				var $initialHeading = document.createElement('h1');
 				$initialHeading.appendChild($initialTitle);
@@ -47,8 +47,26 @@
 				var $slides = Reveal.getSlidesElement();
 				$slides.prepend($initialSlide);
 
-				Reveal.sync();
 				Reveal.slide(0, 0, 0);
+			}
+
+			function addWaterMark() {
+				var slides = Reveal.getSlides();
+
+				slides.forEach(function(slide, index) {
+					if (index == 0) { return }
+
+					slide.setAttribute('data-background-image', '../img/watermark.jpg');
+					slide.setAttribute('data-background-size', '23%');
+					slide.setAttribute('data-background-position', '-4% 96%');
+				});
+			}
+
+			Reveal.on('ready', function() {
+				createInitialSlide();
+				addWaterMark();
+
+				Reveal.sync();
 			});
 		</script>
 	</body>
