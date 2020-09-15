@@ -57,3 +57,10 @@ section.has-dark-background {
   height: 8px;
   color: $headingColor;
 }
+
+.reveal-viewport.kiprosh-slide {
+  background-image: url(../../plugin/kiprosh/watermark.jpg);
+  background-size: 23%;
+  background-position: -4% 96%;
+  background-repeat: no-repeat;
+}

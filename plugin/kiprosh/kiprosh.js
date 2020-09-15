@@ -17,9 +17,12 @@ var Kiprosh = (function() {
     slides.forEach(function(slide, index) {
       if (index == 0) { return }
 
-      slide.setAttribute('data-background-image', '../img/watermark.jpg');
-      slide.setAttribute('data-background-size', '23%');
-      slide.setAttribute('data-background-position', '-4% 96%');
+      var attributeValue = slide.getAttribute('data-state');
+      if (attributeValue == null) {
+        slide.setAttribute('data-state', 'kiprosh-slide');
+      } else {
+        slide.setAttribute('data-state', attributeValue + ' kiprosh-slide');
+      }
     });
   }
 
