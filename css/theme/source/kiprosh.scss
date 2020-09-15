@@ -64,3 +64,16 @@ section.has-dark-background {
   background-position: -4% 96%;
   background-repeat: no-repeat;
 }
+
+.reveal-viewport.kiprosh-initial-slide {
+  background-image: url(../../plugin/kiprosh/logo.png), url(../../plugin/kiprosh/intro-square.svg);
+  background-size: 15%, 40%;
+  background-repeat: no-repeat;
+  background-position: center 30%, center;
+}
+
+.reveal .kiprosh-intro-text {
+  color: #fff;
+  font-size: $heading3Size;
+  margin-top: 142px;
+}
