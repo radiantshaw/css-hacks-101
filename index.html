@@ -25,6 +25,7 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/kiprosh/kiprosh.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -33,40 +34,7 @@
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-
-			// Create the initial slide
-			function createInitialSlide() {
-				var $initialTitle = document.createTextNode(document.title);
-				var $initialHeading = document.createElement('h1');
-				$initialHeading.appendChild($initialTitle);
-				var $initialSlide = document.createElement('section');
-				$initialSlide.appendChild($initialHeading);
-
-				var $slides = Reveal.getSlidesElement();
-				$slides.prepend($initialSlide);
-
-				Reveal.slide(0, 0, 0);
-			}
-
-			function addWaterMark() {
-				var slides = Reveal.getSlides();
-
-				slides.forEach(function(slide, index) {
-					if (index == 0) { return }
-
-					slide.setAttribute('data-background-image', '../img/watermark.jpg');
-					slide.setAttribute('data-background-size', '23%');
-					slide.setAttribute('data-background-position', '-4% 96%');
-				});
-			}
-
-			Reveal.on('ready', function() {
-				createInitialSlide();
-				addWaterMark();
-
-				Reveal.sync();
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, Kiprosh ]
 			});
 		</script>
 	</body>
