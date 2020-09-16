@@ -13,6 +13,7 @@
 
 // Include theme-specific fonts
 @import url(fonts/source-sans-pro/source-sans-pro.css);
+@import url(fonts/fira-code/fira-code.css);
 
 
 // Override theme settings (see ../template/settings.scss)
@@ -24,6 +25,7 @@ $headingColor: #e53245;
 $mainFontSize: 42px;
 $mainFont: 'Source Sans Pro', Helvetica, sans-serif;
 $headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$codeFont: 'Fira Code', monospace;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: none;
