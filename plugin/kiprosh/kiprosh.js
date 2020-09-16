@@ -1,6 +1,20 @@
-var Kiprosh = (function() {
-  // Create the initial slide
-  function _createInitialSlide(deck) {
+var Kiprosh = (function(callbacks) {
+  function init(deck) {
+    callbacks.forEach(function(callback) {
+      callback(deck);
+    });
+  }
+
+  var Kiprosh = function() {
+    return {
+      id: 'kiprosh',
+      init: init
+    };
+  }
+
+  return Kiprosh;
+})([
+  function(deck) {
     var $initialTitle = document.createTextNode(document.title);
     var $initialHeading = document.createElement('h1');
     $initialHeading.classList.add('kiprosh-intro-text');
@@ -10,9 +24,8 @@ var Kiprosh = (function() {
 
     var $slides = deck.getSlidesElement();
     $slides.prepend($initialSlide);
-  }
-
-  function _addWaterMark(deck) {
+  },
+  function(deck) {
     var slides = deck.getSlides();
 
     slides.forEach(function(slide, index) {
@@ -29,16 +42,4 @@ var Kiprosh = (function() {
       }
     });
   }
-
-  function init(deck) {
-    _createInitialSlide(deck);
-    _addWaterMark(deck);
-  }
-
-  return function() {
-    return {
-      id: 'kiprosh',
-      init: init
-    };
-  };
-})();
+]);
