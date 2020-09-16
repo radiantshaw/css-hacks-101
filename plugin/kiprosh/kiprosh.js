@@ -57,12 +57,17 @@ var Kiprosh = (function(callbacks) {
     slides.forEach(function(slide, index) {
       if (index == 0) { return }
 
-      var attributeValue = slide.getAttribute('data-state');
-      if (attributeValue == null) {
-        slide.setAttribute('data-state', 'kiprosh-slide');
-      } else {
-        slide.setAttribute('data-state', attributeValue + ' kiprosh-slide');
-      }
+      var hasBackground =
+        slide.hasAttribute('data-background-color') ||
+        slide.hasAttribute('data-background-image') ||
+        slide.hasAttribute('data-background-video') ||
+        slide.hasAttribute('data-background-iframe');
+
+      if (hasBackground) { return }
+
+      slide.setAttribute('data-background-image', 'plugin/kiprosh/watermark.jpg');
+      slide.setAttribute('data-background-size', '23%');
+      slide.setAttribute('data-background-position', '-4% 96%');
     });
   }
 ]);
