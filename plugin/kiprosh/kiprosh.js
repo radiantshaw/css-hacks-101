@@ -14,6 +14,9 @@ var Kiprosh = (function(callbacks) {
 
   return Kiprosh;
 })([
+  /**
+   * Create the initial slide from the document title
+   */
   function(deck) {
     var $introSquareImage = document.createElement('img');
     $introSquareImage.src = 'plugin/kiprosh/intro-square.svg';
@@ -45,6 +48,9 @@ var Kiprosh = (function(callbacks) {
     var $slides = deck.getSlidesElement();
     $slides.prepend($initialSlide);
   },
+  /**
+   * Add watermark to the rest of the slides
+   */
   function(deck) {
     var slides = deck.getSlides();
 
