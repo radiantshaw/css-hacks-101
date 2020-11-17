@@ -34,11 +34,14 @@ var Kiprosh = (function(callbacks) {
     $mainHeading.style.color = '#fff';
     $mainHeading.style.fontSize = '1.3em';
     $mainHeading.style.position = 'absolute';
-    $mainHeading.style.top = '50%';
+    $mainHeading.style.top = '45%';
     $mainHeading.style.left = 'calc(50% - 210px)';
     $mainHeading.style.width = '420px';
-    $mainHeading.style.maxHeight = '200px';
+    $mainHeading.style.height = '210px';
     $mainHeading.style.overflow = 'hidden';
+    $mainHeading.style.display = 'flex';
+    $mainHeading.style.justifyContent = 'center';
+    $mainHeading.style.alignItems = 'center';
 
     var $initialSlide = document.createElement('section');
     $initialSlide.appendChild($introSquareImage);
