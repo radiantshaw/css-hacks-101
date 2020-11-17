@@ -21,6 +21,12 @@ The full reveal.js documentation is available at [revealjs.com](https://revealjs
 ## Online Editor
 Want to create your presentation using a visual editor? Try the official reveal.js presentation platform for free at [Slides.com](https://slides.com). It's made by the same people behind reveal.js.
 
+## Kiprosh Theme & Plugin
+The default theme is set to the Kiprosh theme. It also comes with a plugin which does the following things for you:
+
+- Creates the first slide automatically using the text from the `<title>` tag.
+- Adds the Kiprosh watermark for slides which do not have a background set using any of the methods specified [here](https://revealjs.com/backgrounds).
+
 ## License
 
 MIT licensed
