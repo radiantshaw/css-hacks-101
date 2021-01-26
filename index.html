@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>CSS Hacks 101</title>
+    <title>CSS: Things We Often Overlook</title>
 
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
@@ -12,12 +12,208 @@
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+    <style>
+      iframe {
+        width: 100%;
+      }
+
+      div.l-vertical {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section>Slide 1</section>
-        <section>Slide 2</section>
+        <section>
+          <section>
+            <h2>Specificity</h2>
+          </section>
+
+          <section>
+            <pre><code class="lang-css" data-trim data-line-numbers >
+              div.container p {
+                color: crimson;
+              }
+
+              .container p {
+                color: seagreen;
+              }
+            </code></pre>
+
+            <iframe src="presentation/frames/specificity.html" class="r-frame fragment"></iframe>
+          </section>
+
+          <section>
+            <img data-src="presentation/images/specificity.svg">
+          </section>
+
+          <section>
+            <div class="l-vertical" style="align-items: center">
+              <img data-src="presentation/images/specificity-calculator.svg" width="300">
+              <a href="https://specificity.keegan.st">
+                <code>specificity.keegan.st</code>
+              </a>
+            </div>
+          </section>
+
+          <section data-background-iframe="https://specificity.keegan.st/"></section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Specified vs Unspecified</h2>
+          </section>
+
+          <section data-auto-animate>
+            <h3 data-id="specified-vs-unspecified-header">Specified properties</h3>
+            <pre data-id="specified-vs-unspecified-code"><code class="lang-css" data-trim data-line-numbers>
+              p {
+                color: salmon;
+              }
+            </code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <h3 data-id="specified-vs-unspecified-header">Unspecified properties</h3>
+            <pre data-id="specified-vs-unspecified-code"><code class="lang-css" data-trim data-line-numbers>
+              p { /* ... */ }
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Calculation rules</h3>
+            <ul>
+              <li class="fragment">
+                For non-inherited properties, the initial value is used on <em>all elements,</em> as long as no specified value is supplied.
+              </li>
+              <li class="fragment">
+                For inherited properties, the initial value is used on the <em>root element only,</em> as long as no specified value is supplied.
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>
+              <code>inherit</code> vs <code>initial</code>
+            </h2>
+          </section>
+
+          <section>
+            <h3><code>inherit</code></h3>
+
+            <pre class="fragment"><code class="lang-html" data-trim data-line-numbers>
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+              </div>
+            </code></pre>
+
+            <pre class="fragment"><code class="lang-css" data-trim data-line-numbers>
+              div { color: royalblue }
+              p { color: inherit }
+            </code></pre>
+
+            <iframe src="presentation/frames/inherit.html" class="fragment r-frame"></iframe>
+          </section>
+
+          <section>
+            <h3><code>initial</code></h3>
+
+            <pre class="fragment"><code class="lang-html" data-trim data-line-numbers>
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+              </div>
+            </code></pre>
+
+            <pre class="fragment"><code class="lang-css" data-trim data-line-numbers>
+              div { color: royalblue }
+              p { color: initial }
+            </code></pre>
+
+            <iframe src="presentation/frames/initial.html" class="fragment r-frame"></iframe>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2><code>unset</code></h2>
+          </section>
+
+          <section>
+            <h3>With inherited properties</h3>
+
+            <pre class="fragment"><code class="lang-html" data-trim data-line-numbers>
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+              </div>
+            </code></pre>
+
+            <pre class="fragment"><code class="lang-css" data-trim data-line-numbers>
+              div { color: royalblue }
+              p { color: unset }
+            </code></pre>
+
+            <iframe src="presentation/frames/unset-with-inherited.html" class="fragment r-frame"></iframe>
+          </section>
+
+          <section>
+            <h3>With non-inherited properties</h3>
+
+            <pre class="fragment"><code class="lang-html" data-trim data-line-numbers>
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+              </div>
+            </code></pre>
+
+            <pre class="fragment"><code class="lang-css" data-trim data-line-numbers>
+              div { border: 1px solid tomato }
+              p { border: 1px solid tomato }
+              p { border-color: unset }
+            </code></pre>
+
+            <iframe src="presentation/frames/unset-with-non-inherited.html" class="fragment r-frame"></iframe>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Tip: <code>currentColor</code></h2>
+          </section>
+
+          <section data-auto-animate>
+            <iframe data-id="current-color" src="presentation/frames/current-color.html" class="r-frame"></iframe>
+
+            <pre data-id="current-color-code" class="fragment"><code class="lang-css" data-trim data-line-numbers>
+              p {
+                color: sienna;
+                border: 1px solid sienna;
+              }
+            </code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <iframe data-id="current-color" src="presentation/frames/current-color.html" class="r-frame"></iframe>
+
+            <pre data-id="current-color-code" class="fragment"><code class="lang-css" data-trim data-line-numbers>
+              p {
+                color: sienna;
+                border: 1px solid currentColor;
+              }
+            </code></pre>
+          </section>
+        </section>
       </div>
     </div>
 
