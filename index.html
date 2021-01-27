@@ -308,7 +308,7 @@
             <h2><code>z-index</code></h2>
           </section>
 
-          <section>
+          <section data-auto-animate>
             <h3>Default stacking order</h3>
 
             <ol>
@@ -318,7 +318,9 @@
             </ol>
           </section>
 
-          <section>
+          <section data-auto-animate>
+            <h3>Default stacking order</h3>
+
             <pre><code class="lang-html" data-trim data-line-numbers>
               <div class="pink">
                 <div class="orange"></div>
@@ -327,7 +329,7 @@
               <div class="green"></div>
             </code></pre>
 
-            <pre class="fragment" data-id="external-font-code"><code class="lang-css" data-trim data-line-numbers>
+            <pre data-id="external-font-code"><code class="lang-css" data-trim data-line-numbers>
               .blue, .pink, .orange { position: absolute }
             </code></pre>
 
@@ -337,7 +339,7 @@
           <section>
             <h3>Stacking using <code>z-index</code></h3>
 
-            <pre class="fragment" data-id="external-font-code"><code class="lang-css" data-trim data-line-numbers>
+            <pre data-id="external-font-code"><code class="lang-css" data-trim data-line-numbers>
               .blue, .pink, .orange { position: absolute }
               .blue { z-index: 2 }
               .orange { z-index: 3 }
@@ -347,7 +349,7 @@
             <img class="fragment" data-src="presentation/images/z-index-stacking.svg">
           </section>
 
-          <section>
+          <section data-auto-animate>
             <h3>Stacking context</h3>
 
             <pre><code class="lang-html" data-trim data-line-numbers>
@@ -359,7 +361,7 @@
               <div class="green"></div>
             </code></pre>
 
-            <pre class="fragment" data-id="external-font-code"><code class="lang-css" data-trim data-line-numbers>
+            <pre data-id="external-font-code"><code class="lang-css" data-trim data-line-numbers>
               .blue, .pink, .orange, .purple { position: absolute }
               .purple { z-index: 0 }
               .pink { z-index: 1 }
@@ -367,8 +369,12 @@
               .orange { z-index: 3 }
               .green { z-index: 100 }
             </code></pre>
+          </section>
 
-            <img class="fragment" data-src="presentation/images/z-index-stacking-context.svg">
+          <section data-auto-animate>
+            <h3>Stacking context</h3>
+
+            <img data-src="presentation/images/z-index-stacking-context.svg">
           </section>
 
           <section>
@@ -384,7 +390,7 @@
             <img class="fragment" data-src="presentation/images/z-index-stacking-context-2.svg">
           </section>
 
-          <section>
+          <section data-auto-animate>
             <h3>Stacking context due to other reasons</h3>
 
             <pre><code class="lang-html" data-trim data-line-numbers>
@@ -395,16 +401,28 @@
               <div class="green"></div>
             </code></pre>
 
-            <pre class="fragment" data-id="external-font-code"><code class="lang-css" data-trim data-line-numbers>
+            <pre data-id="external-font-code"><code class="lang-css" data-trim data-line-numbers>
               .blue, .pink, .orange { position: absolute }
               .pink { filter: hue-rotate(20deg) }
               .blue { z-index: 2 }
               .orange { z-index: 3 }
               .green { z-index: 100 }
             </code></pre>
-
-            <img class="fragment" data-src="presentation/images/z-index-filter.svg">
           </section>
+
+          <section data-auto-animate>
+            <h3>Stacking context due to other reasons</h3>
+
+            <img data-src="presentation/images/z-index-filter.svg">
+          </section>
+        </section>
+
+        <section>
+          <h2>Any questions?</h2>
+        </section>
+
+        <section>
+          <h2>Thank you!</h2>
         </section>
       </div>
     </div>
